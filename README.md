@@ -1,2 +1,2 @@
-# sysKt
-sysKt
+Failed to instantiate [org.elasticsearch.client.transport.TransportClient]: Factory method 'elasticsearchClient' threw exception; nested exception is java.lang.IllegalStateException: availableProcessors is already set to [8], rejecting [8]
+JVM：-Des.set.netty.runtime.available.processors=false
