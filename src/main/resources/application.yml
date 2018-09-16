@@ -1,0 +1,39 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /
+    application-display-name: sysTk
+mybatis:
+  type-aliases-package: cn.w2site.fik.systk
+  mapper-locations:
+  - classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybaits-config.xml
+spring:
+  session:
+    store-type: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout:
+      seconds: 5
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3366/test?useUnicode=true&characterEncoding=utf-8
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+  kafka:
+    bootstrap-servers:
+    - 127.0.0.1:9092
+    consumer:
+      group-id: 0
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      batch-size: 65536
+      buffer-memory: 65536
